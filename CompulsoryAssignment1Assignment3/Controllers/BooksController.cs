@@ -16,14 +16,14 @@ namespace CompulsoryAssignment1Assignment3.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        // GET: api/<BooksController>
+        // GET: <BooksController>
         [HttpGet]
         public List<Book> Get()
         {
             return BooksList.books;
         }
 
-        // GET api/<BooksController>/0123456789abc
+        // GET <BooksController>/0123456789abc
         [HttpGet("{isbn13}")]
         public IActionResult Get(string isbn13)
         {
@@ -36,7 +36,7 @@ namespace CompulsoryAssignment1Assignment3.Controllers
             return Ok(b);
         }
 
-        // POST api/<BooksController>
+        // POST <BooksController>
         [HttpPost]
         public IActionResult Post([FromBody] Book value)
         {
@@ -49,7 +49,7 @@ namespace CompulsoryAssignment1Assignment3.Controllers
             return CreatedAtAction("Get", new {isbn13 = value.ISBN13}, value);
         }
 
-        // PUT api/<BooksController>/5
+        // PUT <BooksController>/1234567890abc
         [HttpPut("{isbn13}")]
         public IActionResult Put(string isbn13, [FromBody] Book value)
         {
@@ -70,7 +70,7 @@ namespace CompulsoryAssignment1Assignment3.Controllers
             return NoContent();
         }
 
-        // DELETE api/<BooksController>/5
+        // DELETE <BooksController>/1234567890abc
         [HttpDelete("{isbn13}")]
         public IActionResult Delete(string isbn13)
         {
